@@ -1,6 +1,9 @@
 .container {
-  max-width: 120rem;
+  max-width: 100rem;
   height: 40rem;
-  background-color: orangered;
+  // background-color: orangered;
   margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
