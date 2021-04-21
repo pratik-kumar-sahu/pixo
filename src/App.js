@@ -4,6 +4,7 @@ import "./App.css";
 import Container from "./components/Container/Container";
 import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -12,7 +13,10 @@ function App() {
     <div className="App">
       <Header />
       <Form />
-      <Container setSelected={setSelectedImg} />
+      <Container setSelectedImg={setSelectedImg} />
+      {selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </div>
   );
 }

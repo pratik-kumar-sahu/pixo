@@ -13,7 +13,7 @@ function Form() {
 
     if (selectedFile && allowedType.includes(selectedFile.type)) {
       setFile(selectedFile);
-      setError("");
+      setError(null);
     } else {
       setFile(null);
       setError("Please select valid jpeg, png or gif files");
@@ -26,7 +26,10 @@ function Form() {
         <input type="file" onChange={changeHandler} />
         <span>+</span>
       </label>
-      <div className="status">
+      <div
+        style={{ display: error || file ? "block" : "none" }}
+        className="status"
+      >
         {error && <div style={{ color: "orangered" }}>{error}</div>}
         {file && <div>{file.name}</div>}
         {file && <Progress file={file} setFile={setFile} />}
