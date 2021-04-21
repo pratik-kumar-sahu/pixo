@@ -1,3 +1,7 @@
+$medium: 56.25em;
+$small: 37.5em;
+$smallest: 31.25em;
+
 .container {
   max-width: 100rem;
   margin: 10px auto;
@@ -5,6 +9,18 @@
   justify-content: space-between;
   flex-wrap: wrap;
   box-shadow: 4px 4px 6px rgba(#8e8e8e, 0.6), -4px -4px 6px rgba(#fff, 0.8);
+
+  @media only screen and (max-width: $medium) {
+    // height: 18rem;
+    margin: 4rem 2rem;
+  }
+
+  @media only screen and (max-width: $small) {
+    // height: 18rem;
+    margin: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .container-wrap {
@@ -19,9 +35,19 @@
   margin: 2rem;
 
   &:hover {
-    box-shadow: 4px 4px 6px rgba(#8e8e8e, 0.6), -6px -6px 6px rgba(#fff, 0.8);
+    box-shadow: 4px 4px 6px rgba(#8e8e8e, 0.6), -4px -4px 6px rgba(#fff, 0.8);
     transition: all 0.5s;
     border-style: none;
+  }
+
+  @media only screen and (max-width: $small) {
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 }
 
@@ -35,5 +61,11 @@
   &:hover {
     margin: 2.5px auto;
     transition: all 0.3s;
+  }
+
+  @media only screen and (max-width: $small) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }

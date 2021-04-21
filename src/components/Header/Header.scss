@@ -1,16 +1,39 @@
+$medium: 56.25em;
+$small: 37.5em;
+$smallest: 31.25em;
+
 .header {
   max-width: 100rem;
-  height: 28rem;
+  // height: 28rem;
   background-color: var(--gray-light);
   margin: 0 auto;
   box-shadow: 4px 4px 6px rgba(#8e8e8e, 0.6), -4px -4px 6px rgba(#fff, 0.8);
   text-align: left;
   display: flex;
 
+  @media only screen and (max-width: $medium) {
+    // height: 18rem;
+    margin: 4rem 2rem;
+  }
+
+  @media only screen and (max-width: $small) {
+    // height: 18rem;
+    margin: 2rem;
+    flex-direction: column;
+  }
+
   & img {
     margin: 1.5rem 1.5rem;
     height: 25rem;
     width: auto;
+
+    // @media only screen and (max-width: $medium) {
+    //   height: 15rem;
+    // }
+
+    // @media only screen and (max-width: $small) {
+    //   font-size: 30%;
+    // }
   }
 
   & div {
