@@ -4,8 +4,7 @@ import "./Form.scss";
 
 function Form() {
   const [file, setFile] = useState(null);
-  const [message, setMessage] = useState(null);
-  const [progress, setProgress] = useState("");
+  const [error, setError] = useState(null);
 
   const allowedType = ["image/jpeg", "image/png", "image/gif"];
 
@@ -14,10 +13,10 @@ function Form() {
 
     if (selectedFile && allowedType.includes(selectedFile.type)) {
       setFile(selectedFile);
-      setMessage(selectedFile.name);
+      setError("");
     } else {
       setFile(null);
-      setMessage("Please select valid jpeg, png or gif files");
+      setError("Please select valid jpeg, png or gif files");
     }
   };
 
@@ -28,8 +27,9 @@ function Form() {
         <span>+</span>
       </label>
       <div className="status">
-        {message}
-        {file && <Progress />}
+        {error && <div style={{ color: "orangered" }}>{error}</div>}
+        {file && <div>{file.name}</div>}
+        {file && <Progress file={file} setFile={setFile} />}
       </div>
     </form>
   );
