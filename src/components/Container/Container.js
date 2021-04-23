@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 function Container({ setSelectedImg }) {
   const { docs } = useFirestore("images");
-  console.log(docs);
+  // console.log(docs);
 
   return (
     <div className="container">
